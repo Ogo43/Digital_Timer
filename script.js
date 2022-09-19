@@ -7,12 +7,12 @@ let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
-//Define variable to hold setinterval() function
+// Define variable to hold setinterval() function
 let interval = null;
 
-//Define variable to hold timer position
-let position = "paused";
-let internalPosition = "resumed";
+// //Define variable to hold timer position
+let statusbar = "paused";
+// let statusbar2 = "canceled";
 
 //Timer function logic to determine when to increment
 
@@ -58,48 +58,75 @@ function activeTimer(){
 }
 
 
-function start(){
+function startPauseResume(){
 
-    if(position === paused){
+    if(statusbar === "paused"){
 
-    //Start the timer (by calling the setinterval() function)
-
-    interval = window.setInterval(activeTimer, 1000);
-    document.getElementById("start").innerHTML = "Pause";
-    position = "started";
-
-    }
-    else if(internalPosition === resumed){
+//Start the timer (by calling the setinterval() function)
 
     interval = window.setInterval(activeTimer, 1000);
-    document.getElementById("Pause").innerHTML = "Resume";
-    position = "paused";
-    }
+    document.getElementById("startPauseResume").innerHTML = "Pause";
+    statusbar = "started";
+ }
+
+//pause/resume the timer by changing the status of the timer
+
+    else if(statusbar === "paused"){
+
+    interval = window.setInterval(activeTimer, 1000);
+    document.getElementById("startPauseResume").innerHTML = "Pause";
+    statusbar = "resumed";
+}
 
     else{
 
         window.clearInterval(interval);
-        document.getElementById("cancel").innerHTML = "Start";
-        position = "cancel";
+        document.getElementById("startPauseResume").innerHTML = "Resume";
+        statusbar = "paused";
 
     }
 
 }
 
-//function to cancel the timer
 
-function cancel(){
 
-    window.clearInterval(interval);
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    document.getElementById("display").innerHTML = 
-    "99:59:59";
-    "00:00:00";
-    "01:01:01";
-    document.getElementById("start").innerHTML = "Start";
-}
+// function startPauseResumeCancel(){
 
+//     if(statusbar2 === "canceled"){
+
+//     interval = window.setInterval(activeTimer, 1000);
+//     document.getElementById("startPauseResumeCancel").innerHTML = "Cancel";
+//     statusbar2 = "started";
+//     }
+
+//    else{
+
+//     window.clearInterval(interval);
+//     document.getElementById("startPauseResumeCancel").innerHTML = "Start";
+//     statusbar2 = "cancel"
+//    } 
+
+
+// } 
+
+
+   
+
+
+
+// //function to cancel the timer
+
+// function startPauseResumeCancel(){
+
+//     window.clearInterval(interval);
+//     seconds = 0;
+//     minutes = 0;
+//     hours = 0;
+//     document.getElementById("display").innerHTML = 
+//     "99:59:59";
+//     "00:00:00";
+//     "01:01:01";
+//     document.getElementById("start").innerHTML = "Start";
+// }
 
 
