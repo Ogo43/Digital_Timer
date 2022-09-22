@@ -89,44 +89,19 @@ function startPauseResume(){
 }
 
 
+//function to cancel the timer
 
-// function startPauseResumeCancel(){
+function cancel(){
 
-//     if(statusbar2 === "canceled"){
-
-//     interval = window.setInterval(activeTimer, 1000);
-//     document.getElementById("startPauseResumeCancel").innerHTML = "Cancel";
-//     statusbar2 = "started";
-//     }
-
-//    else{
-
-//     window.clearInterval(interval);
-//     document.getElementById("startPauseResumeCancel").innerHTML = "Start";
-//     statusbar2 = "cancel"
-//    } 
-
-
-// } 
-
-
-   
-
-
-
-// //function to cancel the timer
-
-// function startPauseResumeCancel(){
-
-//     window.clearInterval(interval);
-//     seconds = 0;
-//     minutes = 0;
-//     hours = 0;
-//     document.getElementById("display").innerHTML = 
-//     "99:59:59";
-//     "00:00:00";
-//     "01:01:01";
-//     document.getElementById("start").innerHTML = "Start";
-// }
+    window.clearInterval(interval);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("display").innerHTML = 
+    "99:59:59";
+    "00:00:00";
+    "01:01:01";
+    document.getElementById("startPauseResume").innerHTML = "Start";
+}
 
 
