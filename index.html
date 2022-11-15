@@ -8,14 +8,18 @@
     <title>Timer</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <h4>Hours Minutes Seconds</h4>
 
-        <div id="display">
-            99:59:59
-            00:00:00
-            01:01:01
-         </div>
+            <div class="circle">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <div id="display">00:00:00</div>
+        
+        </div>
+    </div>
          
          <div class="button">
                 <button id="startPauseResume" onclick="startPauseResume()">Start</button> <button id="cancel" onclick="cancel()">Cancel</button> 
@@ -23,7 +27,7 @@
                 <button id="resume">Resume</button> -->
                  
         </div>   
-    </div>  
+    </div>
 
     <script src="script.js"></script>
 </body>

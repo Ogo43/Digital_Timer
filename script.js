@@ -53,6 +53,7 @@ function activeTimer(){
     else{
         displayHours = hours;
     }
+
     //Display time value on screen
     document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
 }
@@ -78,11 +79,12 @@ function startPauseResume(){
     statusbar = "resumed";
 }
 
+
     else{
 
-        window.clearInterval(interval);
-        document.getElementById("startPauseResume").innerHTML = "Resume";
-        statusbar = "paused";
+    window.clearInterval(interval);
+    document.getElementById("startPauseResume").innerHTML = "Resume";
+    statusbar = "paused";
 
     }
 
@@ -98,10 +100,9 @@ function cancel(){
     minutes = 0;
     hours = 0;
     document.getElementById("display").innerHTML = 
-    "99:59:59";
     "00:00:00";
-    "01:01:01";
     document.getElementById("startPauseResume").innerHTML = "Start";
+    statusbar = "paused";
 }
 
 
