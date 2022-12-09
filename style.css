@@ -4,70 +4,123 @@ body{
    background-color: rgb(29, 17, 17);
     height : 300px;
     width : 100%;
+}   
+
+#container div{
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
-   
+
+#container .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-left: 50rem;
+    padding-top: 12rem;
+    padding-bottom: 10rem;
+}
+
+#container .circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+#container .circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    /* stroke: black; */
+    stroke-width: 4;
+    transform: translate(5px,5px);
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+
+}
+
+.dots{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.dots::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+}
 
 #display{
-    width : 100%; 
-    text-align : center;
-    margin : 0px auto; 
-    width: 60px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    margin: 0px 0px 14rem 53px;
+    padding: 15rem 3.5rem 0.5rem 0%;
     font-size: 30px;
-    line-height: 2;  
     color: #ffffff;
 }
 
-h4{
-    width: 100%;
-    font-size: 17px;
-    word-spacing: 10rem;
+#container h4{
+    font-weight: 500;
+    font-size: 1.5rem;
+    word-spacing: 17rem;
     text-align: center;
     color: rgb(191, 182, 182);
+}
 
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 35rem;
 }
 
 #startPauseResume{
-    font-size: 16px;
-    width: 15%;
-    align-items: center;
     border-color: rgb(49, 49, 116);
     border-radius: 2.5rem;
     color: #ffffff;
     background-color: rgb(49, 49, 116);
-    margin: 20rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 3rem;
+    margin-right: 20rem;
     text-align: center;
     font-weight: 700;
+    font-size: 16px;
 }
 
 #cancel{
     font-size: 16px;
-    width: 15%;
-    align-items: center;
     border-color: rgb(46, 46, 49);
     border-radius: 2.5rem;
     color: #ffffff;
     background-color: rgb(55, 55, 65);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 3rem;
     text-align: center;
     font-weight: 700;
 
 }
 
-/* #pause{
-    font-size: 16px;
-    width: 15%;
-    align-items: center;
-    border-color: rgb(112, 18, 18);
-    border-radius: 2.5rem;
-    color: #ffffff;
-    background-color: rgb(112, 18, 18);
-    padding: 0.5rem 2rem;
-    text-align: center;
-    font-weight: 700;
+/* .pause{
+    border-color: rgb(112, 18, 18) !important;
+    background-color: rgb(112, 18, 18) !important;
 }
 
-#resume{
+{
     font-size: 16px;
     width: 15%;
     align-items: center;
@@ -78,7 +131,7 @@ h4{
     padding: 0.5rem 2rem;
     text-align: center;
     font-weight: 700;
-} */
+}  */
 
 /* body,html {
     margin: 0%;
@@ -132,4 +185,4 @@ h4{
 
 .clear-alarm {
     background-color: #ff3868;
-} */
+}

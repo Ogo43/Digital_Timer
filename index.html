@@ -10,24 +10,28 @@
 <body>
     <div id="container">
         <h4>Hours Minutes Seconds</h4>
-
-            <div class="circle">
+        <div class="circle" style="--clr:rgb(82, 17, 112);">
+            <div class="dots display_dot"></div>
                 <svg>
-                    <circle cx="70" cy="70" r="70"></circle>
-                    <circle cx="70" cy="70" r="70"></circle>
-        </svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+    </svg>
+
         <div id="display">00:00:00</div>
-        
-        </div>
+   
     </div>
-         
+            
+        
          <div class="button">
-                <button id="startPauseResume" onclick="startPauseResume()">Start</button> <button id="cancel" onclick="cancel()">Cancel</button> 
+                <button id="startPauseResume" onclick="startPauseResume()">Start</button> 
+                <button id="cancel" onclick="cancel()">Cancel</button> 
                 <!-- <button id="pauseResume" onclick="pauseResume()">Resume</button> 
                 <button id="resume">Resume</button> -->
                  
         </div>   
     </div>
+
+    
 
     <script src="script.js"></script>
 </body>

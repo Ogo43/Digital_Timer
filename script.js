@@ -1,26 +1,26 @@
+// define variables to hold time values
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
-//Declare display value
+// declare display value
+
 let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
-// Define variable to hold setinterval() function
+// define variable to hold setinterval() function
 let interval = null;
 
-// //Define variable to hold timer position
+// define the button position
 let statusbar = "paused";
-// let statusbar2 = "canceled";
 
-//Timer function logic to determine when to increment
+//time function (logic to determine when to increment next value)
 
 function activeTimer(){
     
     seconds++;
 
-    //logic to determine when to increment next value
     if (seconds / 60 === 1){
         seconds = 0;
         minutes++;
@@ -29,9 +29,8 @@ function activeTimer(){
             minutes = 0;
             hours++;
         }
-    }
 
-    //add a leading '0' to seconds/minutes/hours to display '00'
+    //if seconds/minutes/hours are only one digit, add a leading 0 to the value
 
     if (seconds < 10){
         displaySeconds = "0" + seconds.toString();
@@ -54,23 +53,24 @@ function activeTimer(){
         displayHours = hours;
     }
 
-    //Display time value on screen
+    //Display updated time values to user
     document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+    
+    }
 }
+
 
 
 function startPauseResume(){
 
     if(statusbar === "paused"){
 
-//Start the timer (by calling the setinterval() function)
+//start/pause/resume the time (by calling the setInterval() function  
 
     interval = window.setInterval(activeTimer, 1000);
     document.getElementById("startPauseResume").innerHTML = "Pause";
     statusbar = "started";
  }
-
-//pause/resume the timer by changing the status of the timer
 
     else if(statusbar === "paused"){
 
@@ -79,19 +79,16 @@ function startPauseResume(){
     statusbar = "resumed";
 }
 
-
     else{
 
     window.clearInterval(interval);
     document.getElementById("startPauseResume").innerHTML = "Resume";
     statusbar = "paused";
-
-    }
-
+}
 }
 
 
-//function to cancel the timer
+//cancel the timer
 
 function cancel(){
 
@@ -104,5 +101,7 @@ function cancel(){
     document.getElementById("startPauseResume").innerHTML = "Start";
     statusbar = "paused";
 }
+
+
 
 
